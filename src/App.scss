@@ -1,5 +1,88 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@use './sass' as *;
+
+.App {
+    background-color: $bg-dark;
+    width: 100%;
+    height: 100vh;
+    .bg-banner{
+        width: 100%;
+        height: 20vw;
+        background: url('./assets/bg-desktop-dark.jpg') no-repeat center;
+        background-size: cover;
+    }
+    
+    .main-container {
+        // border: 1px solid red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 80%;
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 0 1 auto;
+            padding: 0.5em 0;
+            margin-bottom: 5rem;
+            h1 {
+                color: $font-dark;
+                font-size: 3rem;
+                letter-spacing: 0.2em;
+            }
+            #toggle-btn{
+                svg {
+                    fill: $font-dark;
+                    width: 30px;
+                    height: 30px;
+
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .input-cr {
+            display: flex;
+            margin-bottom: 2rem;
+            flex: 0 1 auto;
+
+            input[type=text] {
+                background-color: $primary-dark;
+                height: 40px;
+                padding: 15px;
+                color: $font-dark;
+                flex: 85%;
+                font-size: 20px;
+                border-radius: 5px 0 0 5px;
+            }
+            input[type=submit] {
+                flex: 15%;
+                cursor: pointer;
+                background-color: $bg-dark;
+                color: $font-dark;
+                font-size: 18px;
+                border-radius: 0 5px 5px 0;
+            }
+        }
+
+        .task-display {
+            background-color: $primary-dark;
+            flex: 1 1 auto;
+            border-radius: 5px 5px 0 0;
+            overflow-y: auto;
+        }
+
+        .footer {
+            flex: 0 1 40px;
+            background-color: $primary-dark;
+            border-radius: 0 0 5px 5px;
+            border: 1px solid #707070;
+        }
+    }
 }
